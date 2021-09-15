@@ -19,7 +19,8 @@ const context = {
             image: 'https://content.codecademy.com/courses/learn-handlebars/musicon/bass-guitar.png',
             name: 'Bass Guitar',
             description: 'Experience the embodiment of funkadelic frequencies that is the bass guitar. Let the deep low notes of the bass guitar resonate with heartbeats everywhere.',
-            price: '$624.99'
+            price: '$624.99',
+            deal: '25% off!'
         },
         {
             image: 'https://content.codecademy.com/courses/learn-handlebars/musicon/drum-kit.png',
@@ -27,6 +28,21 @@ const context = {
             description: 'Ever thought, "one instrument isn\'t enough?" Find an answer in the drum kit. Coordinate a collections of drums and cymbals to dictate the rhythm of musical masterpiece.',
             price: '$649.00',
             sale: '$349.00'
+        },
+        {
+            image: 'https://content.codecademy.com/courses/learn-handlebars/musicon/violin.png',
+            name: 'Violin',
+            description: 'A versatile that is suited for any and all occasions. Those wearing tuxedos can strum together a classic. Others who prefer overalls can call it a fiddle and play some folk songs.',
+            price: '$649.00',
+            sale: '$245.00'
         }
     ]
-};
+}
+
+const templateElement = document.querySelector("#templateHB"),
+templateSource = templateElement.innerHTML,
+template = Handlebars.compile(templateSource),
+compiledHtml = template(context)
+
+document.querySelector("#information").innerHTML = compiledHtml
+
